@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-ng-app="demoApp">
+  <main data-ng-controller="TasksController as taskCtrl">
+    <div data-task-list
+      data-list-title="Thing I Have To Do After Class" 
+      data-tasks="taskCtrl.tasks">
+    </div>
+  </main>
+
+  <div data-task-list 
+    data-list-title="Another Awesome List"
+    data-tasks="[{desc: 'write a better tranclusion demo'},
+                 {desc: 'test transclusion'}]">
+
+      <p>Here are some extra details</p>  
+      <a href="http://www.google.com">Go To Google</a>
+    </div>
+	<script src="bundle.js"></script>
+</body>
+</html>

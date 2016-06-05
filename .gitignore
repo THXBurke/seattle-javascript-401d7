@@ -3,3 +3,6 @@
 **/*log/
 **/*public
 **/*db
+**/*build
+**/*bundle.js
+**/*bundle.js.map

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-ng-app="demoApp">
+  <main data-ng-controller="BearsController as bearsctrl" data-ng-init="bearsctrl.getAll()">
+    <form data-ng-submit="bearsctrl.createBear()">
+      <label for="name">Name</label>
+      <input type="text" name="name" data-ng-model="bearsctrl.newBear.name">
+
+      <label for="variety">Variety</label>
+      <input type="text" name="variety" data-ng-model="bearsctrl.newBear.variety">
+
+      <label for="fishPreference">Fish Preference</label>
+      <input type="text" name="fishPreference" data-ng-model="bearsctrl.newBear.fishPreference" placeholder="salmons">
+
+      <button id="createbear" type="submit">Create Bear</button>
+    </form>
+
+    <ul id="bearlist">
+    	<li data-ng-repeat="bear in bearsctrl.bears">
+        <span data-ng-if="!bear.editing">{{bear.name}} is a {{bear.variety || 'bear'}} who likes {{bear.fishPreference}}</span>
+        <form data-ng-if="bear.editing" data-ng-submit="bearsctrl.updateBear(bear)">
+          <label for="name">Name</label>
+          <input type="text" name="name" data-ng-model="bear.name">
+
+          <label for="variety">Variety</label>
+          <input type="text" name="variety" data-ng-model="bear.variety">
+
+          <label for="fishPreference">Fish Preference</label>
+          <input type="text" name="fishPreference" data-ng-model="bear.fishPreference" placeholder="salmons">
+
+          <button type="submit">Update Bear</button>
+          <button data-ng-click="bear.editing = false">Cancel</button>
+        </form>
+
+        <button data-ng-if="!bear.editing" data-ng-click="bear.editing = true">Edit</button>
+        <button data-ng-click="bearsctrl.removeBear(bear)">Murder This Bear!</button>
+      </li>
+    </ul>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "may_9_webpack_angular_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "babel": "^6.5.2",
+    "babel-core": "^6.8.0",
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

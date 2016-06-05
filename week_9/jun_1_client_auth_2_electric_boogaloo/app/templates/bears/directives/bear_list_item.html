@@ -1,0 +1,6 @@
+<li>
+  <ng-transclude></ng-transclude>
+  <span data-ng-if="!bear.editing">{{bear.name}} is a {{bear.variety || 'bear'}} who likes {{bear.fishPreference}}</span>
+  <button data-ng-if="!bear.editing" data-ng-click="bear.editing = true">Edit</button>
+  <button data-ng-click="murder(bear)">Murder This Bear!</button>
+</li>

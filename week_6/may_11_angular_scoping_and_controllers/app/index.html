@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-ng-app="demoApp">
+  <main data-ng-controller="SomeController">
+    <h1 id="greeting">{{greeting}}</h1>
+
+    <input type="text" data-ng-model="greeting">
+    <button data-ng-click="alertGreeting()">Click This Button!</button>
+
+    <section data-ng-controller="AnotherController">
+      <h1>{{greeting}}</h1>
+
+      <input type="text" data-ng-model="greeting">
+      <button data-ng-click="update()">Update!</button>
+    </section>
+  </main>
+
+  <div data-ng-controller="BlergController as blerg">
+    <h1>Outside: {{blerg.greeting}}</h1>
+
+    <input type="text" data-ng-model="blerg.greeting">
+
+    <div data-ng-controller="BlergController as blerg2">
+      <h1>One: {{blerg.greeting}}</h1>
+      <h2>Two: {{blerg2.greeting}}</h2>
+
+      <label>one</label>
+      <input type="text" data-ng-model="blerg.greeting">
+      <label>two</label>
+      <input type="text" data-ng-model="blerg2.greeting">
+    </div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>

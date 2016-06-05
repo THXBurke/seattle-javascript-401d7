@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Communication Services</title>
+</head>
+<body data-ng-app="demoApp">
+  <section data-ng-controller="CountCtrl as one">
+    <h1>{{one.counter.count}}</h1>
+    <button data-ng-click="one.add()">Add One to One ah ah ah!</button>
+  </section>
+
+  <section data-ng-controller="CountCtrl as two">
+    <h1>{{two.counter.count}}</h1>
+    <button data-ng-click="two.add()">Add One to One ah ah ah!</button>
+  </section>
+
+
+  <script src="bundle.js"></script>
+</body>
+</html>
